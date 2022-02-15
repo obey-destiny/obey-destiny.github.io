@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /ems
+    jsp:
+      init-parameters:
+        development: true
+
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ems?characterEncoding=UTF-8
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations: classpath:com/haha/mapper/*.xml
+  type-aliases-package: com.haha.entity
+
+logging:
+  level:
+    root: info
+    com.haha.dao: debug
+  file:
+    name: run.log
+    path: ./
+
